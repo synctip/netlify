@@ -1,6 +1,6 @@
-# Dudu Bar & Wine Shift Management App
+# TipSync
 
-Welcome to the Dudu Bar & Wine Shift Management App! This web application is designed to streamline the shift management process and tip distribution for our team at Dudu Bar & Wine. Built with React, TypeScript, and Vite, this app enhances efficiency and ensures fair practices in employee compensation.
+Welcome to the TipSync App! This web application is designed to streamline the shift management process and tip distribution for our team at Dudu Bar & Wine. Built with React, TypeScript, and Vite, this app enhances efficiency and ensures fair practices in employee compensation.
 
 ## Table of Contents
 
