@@ -28,11 +28,11 @@ This project utilizes the following technologies:
 
 ## Installation
 
-To get started with the Dudu Bar & Wine Shift Management App, follow these steps:
+To get started with the TipSync, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/tipsync.git
+   git clone https://github.com/dudubarwine/tipsync.git
    ```
    
 2. Navigate to the project directory:
