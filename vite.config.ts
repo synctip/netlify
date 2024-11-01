@@ -1,12 +1,18 @@
 import { defineConfig } from 'vite';
+import svgr from "@svgr/rollup";
 import react from '@vitejs/plugin-react';
-import path from 'path';
 
 export default defineConfig({
-    plugins: [react()],
+    plugins: [svgr({
+        exportType: 'named',
+        ref: true,
+        svgo: false,
+        titleProp: true,
+        include: 'src/**/*.svg'
+    }), react()],
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, './src')
+            '@': '/src'
         }
     }
 });
