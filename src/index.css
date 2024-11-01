@@ -3,6 +3,9 @@ body,
 #app {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: 'hidden';
 }
 
 #app * {
@@ -42,4 +45,37 @@ input[type=number] {
 
 .successButton:disabled {
     color: #999999;
+}
+
+/* Global scrollbar styles for Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: thin;
+    /* Vertical scrollbar width */
+    height: thin;
+    /* Horizontal scrollbar height */
+}
+
+::-webkit-scrollbar-thumb {
+    background: red;
+    /* Scrollbar thumb color */
+    border-radius: 10px;
+    /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: red;
+    /* Thumb color on hover */
+}
+
+::-webkit-scrollbar-track {
+    background: red;
+    /* Scrollbar track color */
+}
+
+/* Global scrollbar styles for Firefox */
+html {
+    scrollbar-width: thin;
+    /* Options: auto, thin */
+    scrollbar-color: #ffcc00 #000;
+    /* thumb color, track color */
 }

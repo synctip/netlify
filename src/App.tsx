@@ -1,5 +1,6 @@
 import React from 'react';
 import TipsForm from './components/Tips.form';
+import { colors } from './styles/colors';
 
 type Application = React.FC;
 
@@ -10,9 +11,9 @@ const App: Application = () => {
             style={{
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                height: '100vh',
-                backgroundColor: '#f2f2f2'
+                height: '100%',
+                width: '100%',
+                backgroundColor: colors.text.primary.dark
             }}
         >
             <TipsForm />

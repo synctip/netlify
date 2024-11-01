@@ -47,18 +47,15 @@ const GoogleFontSvg: GoogleFontSvgComponent = ({ children, text, value }) => {
                         }}
                     >
                         {children}
-                        {
-                            value &&
-                            <h4
-                                style={{
-                                    margin: 0,
-                                    color: colors.secondary.main,
-                                    fontSize: 18
-                                }}
-                            >
-                                {value}
-                            </h4>
-                        }
+                        <h4
+                            style={{
+                                margin: 0,
+                                color: colors.secondary.main,
+                                fontSize: 18
+                            }}
+                        >
+                            {value}
+                        </h4>
                     </div>
                 </div>
             }

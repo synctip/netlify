@@ -16,6 +16,7 @@ const AddEmployeeComponent: AddEmployeeComponent = ({ onSubmit, employees }) => 
     const [exist, setExist] = React.useState<boolean>(false);
     const [input, setInput] = React.useState<Employee>({
         hours: 0,
+        minutes: 0,
         name: '',
     });
 
@@ -28,7 +29,7 @@ const AddEmployeeComponent: AddEmployeeComponent = ({ onSubmit, employees }) => 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (!exist) {
-            setInput({ hours: 0, name: '' });
+            setInput({ hours: 0, minutes: 0, name: '' });
             onSubmit(event, input);
 
             if (nameInputRef.current) {
@@ -40,8 +41,13 @@ const AddEmployeeComponent: AddEmployeeComponent = ({ onSubmit, employees }) => 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
 
+        if (name === 'minutes' && parseFloat(value) >= 60) {
+            event.currentTarget.select();
+            return setInput({ ...input, minutes: 0 });
+        }
+
         if (Object.keys(input).indexOf(name) !== -1) {
-            setInput({ ...input, [name]: name === 'hours' ? parseFloat(value) : value });
+            setInput({ ...input, [name]: ['hours', 'minutes'].indexOf(name) !== -1 ? parseFloat(value) : value });
         }
     }
 
@@ -80,6 +86,7 @@ const AddEmployeeComponent: AddEmployeeComponent = ({ onSubmit, employees }) => 
                         type="text"
                         placeholder="שם"
                         value={input.name}
+                        id="add-employee"
                         name="name"
                         style={{
                             width: '100%',
@@ -99,32 +106,76 @@ const AddEmployeeComponent: AddEmployeeComponent = ({ onSubmit, employees }) => 
                 <div
                     style={{
                         display: 'flex',
-                        alignItems: 'center',
+                        alignItems: 'flex-start',
                         overflow: 'hidden',
                         padding: 10,
                         width: '100%'
                     }}
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffcc00"><path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z" /></svg>
-                    <input
-                        type="number"
-                        name="hours"
-                        value={input.hours || ''}
-                        step={0.1}
-                        placeholder="שעות"
-                        onChange={handleChange}
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffcc00"><path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z" /></svg>
+                    </div>
+                    <div
                         style={{
                             width: '100%',
-                            fontSize: 18,
-                            border: 'none',
-                            background: colors.text.primary.dark,
-                            outline: 'none',
-                            color: colors.secondary.main,
-                            paddingRight: 8
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'flex-end',
+                            flexDirection: 'row-reverse'
                         }}
-                        onFocus={handleFocus}
-                        ref={hoursInputRef}
-                    />
+                    >
+                        <input
+                            type="number"
+                            name="hours"
+                            value={input.hours || '00'}
+                            min={0}
+                            step={1}
+                            placeholder="שעות"
+                            onChange={handleChange}
+                            title="hours"
+                            style={{
+                                width: 20,
+                                fontSize: 18,
+                                border: 'none',
+                                background: colors.text.primary.dark,
+                                outline: 'none',
+                                color: colors.secondary.main,
+                            }}
+                            onFocus={handleFocus}
+                            ref={hoursInputRef}
+                        />
+                        <span
+                            style={{
+                                color: 'red',
+                                display: 'flex',
+                                alignItems: 'center',
+                                fontSize: 18
+                            }}
+                        >
+                            :
+                        </span>
+                        <input
+                            type="number"
+                            name="minutes"
+                            value={input.minutes || '00'}
+                            min={0}
+                            max={60}
+                            step={1}
+                            placeholder="דקות"
+                            onChange={handleChange}
+                            title="minutes"
+                            style={{
+                                width: 20,
+                                fontSize: 18,
+                                border: 'none',
+                                background: colors.text.primary.dark,
+                                outline: 'none',
+                                color: colors.secondary.main,
+                            }}
+                            onFocus={handleFocus}
+                            ref={hoursInputRef}
+                        />
+                    </div>
                 </div>
                 <div
                     style={{

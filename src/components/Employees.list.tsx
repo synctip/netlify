@@ -1,6 +1,7 @@
 import { Employee } from '@/types/Employee.type';
 import { colors } from '@/styles/colors'
 import DeleteIcon from '@/icons/delete-icon.svg';
+import EmployeesListItem from './Employees.list.item';
 
 type EmployeeListComponent = React.FC<{
     employees: Employee[];
@@ -30,54 +31,31 @@ const EmployeesList: EmployeeListComponent = ({ employees, total, onDelete }) =>
     return (
         <ul
             style={{
-                gap: 10,
+                gap: 1,
                 display: 'flex',
                 flexDirection: 'column',
                 listStyleType: 'none',
                 padding: 0,
                 margin: 0,
+                height: '100%'
             }}
         >
             {
-                employees.map((employee, index) => (
-                    <li
-                        key={index}
-                        style={{
-                            display: 'flex',
-                            background: colors.text.primary.dark,
-                        }}
-                    >
-                        <div
-                            style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                width: '100%',
-                                gap: 10,
-                                padding: '4px 16px',
-                                fontSize: 12,
-                                color: colors.secondary.main
-                            }}>
-                            <h3 style={{ width: '100%' }}>{employee.name}</h3>
-                            <h3 style={{ width: '100%' }}>({employee.hours})</h3>
-                            <h3 style={{ width: '100%' }}>{salary(employee.hours)}</h3>
-                        </div>
-                        <button
-                            style={{
-                                outline: 'none',
-                                color: colors.error.primary.light,
-                                padding: '8px 16px',
-                                borderRadius: '4px',
-                                cursor: 'pointer',
-                                background: 'transparent',
-
-                            }}
-
-                            onClick={event => handleDelete(event, employee.name)}
-                        >
-                            <DeleteIcon />
-                        </button>
-                    </li>
-                ))
+                employees.map((employee, index) => <EmployeesListItem key={index} onDelete={handleDelete} {...employee} salary={salary(employee.hours)} />)
+            }
+            {
+                employees.length === 0 &&
+                <li
+                    style={{
+                        height: '100%',
+                        color: '#999',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}
+                >
+                    רשימה ריקה
+                </li>
             }
         </ul>
     )
