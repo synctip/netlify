@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main  # Change to your default branch if different
+      - dev
   pull_request:
     branches:
       - main  # Change to your default branch if different
+      - dev
 
 jobs:
   build:
