@@ -8,7 +8,7 @@
   "scripts": {
     "preview": "vite preview",
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "tsc  && vite build",
     "test": "jest",
     "prepublish": "npm run build",
     "publish": "npx gh-pages -d dist --verbose"
