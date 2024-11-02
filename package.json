@@ -10,9 +10,9 @@
     "dev": "vite --host",
     "build": "tsc  && vite build --mode production",
     "test": "jest",
-    "publish": "gh-pages -d dist",
-    "format": "prettier --write .",
-    "lint:fix": "eslint . --fix"
+    "publish": "npx gh-pages -d dist",
+    "format": "npx prettier --write .",
+    "lint:fix": "npx eslint . --fix"
   },
   "keywords": [
     "bar",
