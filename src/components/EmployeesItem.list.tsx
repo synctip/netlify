@@ -59,17 +59,12 @@ const DeleteButton: React.FC<HTMLAttributes<HTMLButtonElement>> = (props) => {
   );
 };
 
-type EmployeeListItemComponent = React.FC<
-  Employee & {
-    salary?: string | number;
-    onDelete?: (
-      event: React.MouseEvent<HTMLButtonElement>,
-      name: string
-    ) => void;
-  }
->;
+type EmployeeListItemProps = Employee & {
+  salary?: string | number;
+  onDelete?: (event: React.MouseEvent<HTMLButtonElement>, name: string) => void;
+};
 
-const EmployeeListItem: EmployeeListItemComponent = ({
+const EmployeeListItem: React.FC<EmployeeListItemProps> = ({
   minutes,
   name,
   hours,

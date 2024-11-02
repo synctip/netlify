@@ -2,18 +2,18 @@ import React from "react";
 import { Employee } from "@/types/Employee.type";
 import EmployeesListItem from "./Employees.list.item";
 
-type EmployeeListComponent = React.FC<{
+type EmployeeListProps = {
   employees: Employee[];
   total: number;
   onDelete?: (event: React.MouseEvent<HTMLButtonElement>, name: string) => void;
-}>;
+};
 
-const EmployeesList: EmployeeListComponent = ({
+const EmployeesList: React.FC<EmployeeListProps> = ({
   employees,
   total,
   onDelete,
 }) => {
-  const hours = employees.reduce((curr, prev, indx) => (curr += prev.hours), 0);
+  const hours = employees.reduce((curr, prev) => (curr += prev.hours), 0);
   const perhour = total / hours || 0;
 
   const salary = (hours: number): string => {
@@ -29,7 +29,7 @@ const EmployeesList: EmployeeListComponent = ({
 
   const handleDelete = (
     event: React.MouseEvent<HTMLButtonElement>,
-    name: string,
+    name: string
   ) => {
     onDelete?.(event, name);
   };

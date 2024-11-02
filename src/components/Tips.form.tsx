@@ -3,7 +3,6 @@ import AddEmployeeComponent from "@/components/AddEmployee.form";
 import { colors } from "@/styles/colors";
 import { type Employee } from "@/types/Employee.type";
 import { type TipsInput } from "@/types/TipsInput.type";
-import TodayCalendar from "@/components/TodayCalendar";
 import ShiftSummary from "@/components/ShiftSummary";
 import EmployeesList from "./Employees.list";
 import PaymentsIcon from "@/icons/payments-icon.svg";
@@ -17,7 +16,7 @@ const initialInput: TipsInput = {
 const TipsForm: React.FC = () => {
   const totalInputRef = React.useRef<HTMLInputElement | null>(null);
   const [input, setInput] = React.useState<TipsInput>(initialInput);
-  const [error, setError] = React.useState<string>();
+  const [, setError] = React.useState<string>();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -33,7 +32,7 @@ const TipsForm: React.FC = () => {
 
   const handleEmployeeSubmit = (
     event: React.FormEvent<HTMLFormElement>,
-    value: Employee,
+    value: Employee
   ) => {
     const { name } = value;
     const exist = input.employees.find((e) => e.name === name);
@@ -48,7 +47,7 @@ const TipsForm: React.FC = () => {
 
   const handleEmployeeDelete = (
     event: React.MouseEvent<HTMLButtonElement>,
-    name: string,
+    name: string
   ) => {
     setInput({
       ...input,
@@ -61,7 +60,7 @@ const TipsForm: React.FC = () => {
   };
 
   const handleClick = () => {
-    totalInputRef.current && totalInputRef.current.focus();
+    return totalInputRef.current && totalInputRef.current.focus();
   };
 
   const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {

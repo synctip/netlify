@@ -11,6 +11,19 @@ export default [
   {
     languageOptions: {
       globals: globals.browser,
+      parser: "@typescript-eslint/parser",
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: "module",
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    settings: {
+      react: {
+        version: "detect",
+      },
     },
   },
   pluginJs.configs.recommended,

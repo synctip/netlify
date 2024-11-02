@@ -6,13 +6,13 @@ import ClockIcon from "@/icons/clock-icon.svg";
 import PeopleIcon from "@/icons/people-icon.svg";
 import HRS from "@/utils/FTH";
 
-type ShiftSummaryComponent = React.FC<{
+type ShiftSummaryProps = {
   employees: Employee[];
   total: number;
-}>;
+};
 
-const ShiftSummary: ShiftSummaryComponent = ({ employees, total }) => {
-  const hours = employees.reduce((curr, prev, indx) => {
+const ShiftSummary: React.FC<ShiftSummaryProps> = ({ employees, total }) => {
+  const hours = employees.reduce((curr, prev) => {
     return (curr += prev.hours + prev.minutes / 60);
   }, 0);
 

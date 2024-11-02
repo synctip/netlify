@@ -1,13 +1,13 @@
 import { colors } from "@/styles/colors";
 import React from "react";
 
-type CalendarIconComponent = React.FC<{
+type CalendarIconProps = {
   year: number;
   month: string;
   day: number;
-}>;
+};
 
-const CalendarIcon: CalendarIconComponent = ({ day, month, year }) => (
+const CalendarIcon: React.FC<CalendarIconProps> = ({ day, month, year }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="48"

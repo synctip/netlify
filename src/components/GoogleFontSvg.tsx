@@ -1,13 +1,16 @@
+import React from "react";
 import { colors } from "@/styles/colors";
 
-type GoogleFontSvgComponent = React.FC<
-  React.PropsWithChildren<{
-    text?: string;
-    value?: string | number;
-  }>
->;
+type GoogleFontSvgProps = React.PropsWithChildren<{
+  text?: string;
+  value?: string | number;
+}>;
 
-const GoogleFontSvg: GoogleFontSvgComponent = ({ children, text, value }) => {
+const GoogleFontSvg: React.FC<GoogleFontSvgProps> = ({
+  children,
+  text,
+  value,
+}) => {
   if (!text) return children;
 
   return (

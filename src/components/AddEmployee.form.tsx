@@ -3,14 +3,12 @@ import { Employee } from "../types/Employee.type";
 import { colors } from "@/styles/colors";
 import useDebounce from "@/hooks/useDebounce";
 
-type AddEmployeeComponent = React.FC<
-  React.PropsWithChildren<{
-    onSubmit: (e: React.FormEvent<HTMLFormElement>, data: Employee) => void;
-    employees: Array<string>;
-  }>
->;
+type AddEmployeeComponent = React.PropsWithChildren<{
+  onSubmit: (e: React.FormEvent<HTMLFormElement>, data: Employee) => void;
+  employees: Array<string>;
+}>;
 
-const AddEmployeeComponent: AddEmployeeComponent = ({
+const AddEmployeeComponent: React.FC<AddEmployeeComponent> = ({
   onSubmit,
   employees,
 }) => {

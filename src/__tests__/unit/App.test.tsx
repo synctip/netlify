@@ -1,3 +1,4 @@
+import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import i18n from "i18next";
@@ -28,10 +29,10 @@ describe("App component", () => {
     render(
       <I18nextProvider i18n={i18n}>
         <App />
-      </I18nextProvider>,
+      </I18nextProvider>
     );
 
-    const titleElement = screen.getByText(/"Hi, What\'s phone number?/i);
+    const titleElement = screen.getByText(/"Hi, What's phone number?/i);
     expect(titleElement).toBeInTheDocument();
   });
 
@@ -41,7 +42,7 @@ describe("App component", () => {
     render(
       <I18nextProvider i18n={i18n}>
         <App />
-      </I18nextProvider>,
+      </I18nextProvider>
     );
 
     const titleElement = screen.getByText(/היי, מה מספר הנייד?/i);
