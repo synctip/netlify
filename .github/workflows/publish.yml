@@ -38,6 +38,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Format code
+        run: npm run format
+
+      - name: Lint code
+        run: npm run lint:fix
+
       - name: Build the project
         run: npm run build
         env:
