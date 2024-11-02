@@ -17,7 +17,6 @@ on:
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -39,21 +38,7 @@ jobs:
 
       - name: Build the project
         run: npm run build
-      
-      - name: Upload production-ready files
-        uses: actions/upload-artifact@v3
-        with:
-          path: dist
-          name: production-files
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
 
-<<<<<<< HEAD
       - name: Add .nojekyll file
         run: |
           touch dist/.nojekyll
@@ -84,19 +69,3 @@ jobs:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_dir: ./dist
 
-=======
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-            name: production-files
-            path: dist
-    
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: dist
-          token: ${{ secrets.GITHUB_TOKEN }}
-          clean: true
-          force: true
->>>>>>> d0feac1272f31dcc91f91ebf422317231844e208
