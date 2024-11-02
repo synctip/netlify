@@ -62,6 +62,16 @@ jobs:
         if: github.ref == 'refs/heads/main'
 
         steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup Git
+              run: |
+                git config --global user.name "GitHub Actions Bot"
+                git config --global user.email "actions@github.com"
+                git config --global --add safe.directory "$GITHUB_WORKSPACE"
+              
+
             - name: Debug info
               run: |
                 echo "GitHub ref: ${{ github.ref }}"
@@ -77,8 +87,12 @@ jobs:
             - name: Deploy to GitHub Pages
               uses: JamesIves/github-pages-deploy-action@v4
               with:
+                repository-name: ${{ github.repository }}
                 branch: gh-pages
                 folder: dist
                 clean: true
-                force: true
+                single-commit: true
+                git-config-name: GitHub Actions
+                git-config-email: actions@github.com
+                commit-message: "Deploy to GitHub Pages"
                 token: ${{ secrets.GITHUB_TOKEN }}
