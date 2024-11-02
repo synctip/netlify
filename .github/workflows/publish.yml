@@ -39,6 +39,11 @@ jobs:
       - name: Build the project
         run: npm run build
 
+      - name: Add .nojekyll file
+        run: |
+          touch dist/.nojekyll
+          ls -la dist
+
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
         with:
