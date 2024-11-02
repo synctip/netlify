@@ -46,7 +46,7 @@ ${date.toLocaleDateString("he-IL", {
 *טיפים*: ${NIS(props.total)}
 *אנשי צוות*: ${props.employees.length}
 *שעות*: ${hours.toFixed()} 
-*לשעה*: ${NIS(perhour)}
+*לשעה*: ${NIS(perhour || 0)}
 
 
 *אנשי צוות* \r

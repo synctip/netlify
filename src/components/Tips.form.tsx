@@ -75,6 +75,10 @@ const TipsForm: React.FC = () => {
     }
   };
 
+  const handleDateChange = (date: number) => {
+    setInput({ ...input, date });
+  };
+
   return (
     <React.Fragment>
       <ShareDetailsImage {...input} />
@@ -162,7 +166,7 @@ const TipsForm: React.FC = () => {
               width: "100%",
             }}
           >
-            <DateInput />
+            <DateInput onChange={handleDateChange} />
           </div>
           <div
             style={{

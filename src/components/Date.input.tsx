@@ -2,9 +2,16 @@ import { colors } from "@/styles/colors";
 import React from "react";
 import CalendarIcon from "./CalendarIcon";
 
-const DateInput: React.FC = () => {
+type DateInputProps = {
+  date?: number;
+  onChange?: (date: number) => void;
+};
+
+const DateInput: React.FC<DateInputProps> = (props) => {
   const inputRef = React.useRef<HTMLInputElement | null>(null);
-  const [timestamp, setTimestamp] = React.useState(new Date().getTime());
+  const [timestamp, setTimestamp] = React.useState(
+    props.date || new Date().getTime()
+  );
 
   const date = new Date(timestamp);
 
@@ -14,7 +21,9 @@ const DateInput: React.FC = () => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value) {
-      setTimestamp(new Date(event.target.value).getTime());
+      const date = new Date(event.target.value).getTime();
+      setTimestamp(date);
+      props.onChange?.(date);
     }
   };
 
