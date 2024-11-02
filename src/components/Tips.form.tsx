@@ -9,7 +9,7 @@ import PaymentsIcon from "@/icons/payments-icon.svg";
 import DateInput from "./Date.input";
 
 const initialInput: TipsInput = {
-  total: 3567,
+  total: 0,
   employees: [],
 };
 
