@@ -25,7 +25,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
             persist-credentials: false
 
@@ -33,37 +33,52 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build the project
         run: npm run build
-      
-      - name: Upload production-ready files
-        uses: actions/upload-artifact@v3
-        with:
-          path: dist
-          name: production-files
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+        env: 
+            BASE_URL: /${{ github.event.repository.name }}/
 
-      - name: Download artifact
-        uses: actions/download-artifact@v3
+      - name: Add .nojekyll file
+        run: |
+          touch dist/.nojekyll
+          ls -la dist
+
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v4
         with:
-            name: production-files
-            path: dist
-    
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: dist
-          token: ${{ secrets.GITHUB_TOKEN }}
-          clean: true
-          force: true
+          name: production-files-node-${{ matrix.node-version }}-${{ github.run_id }}
+          path: ./dist
+          retention-days: 1
+
+  deploy:
+        name: Deploy
+        needs: build
+        runs-on: ubuntu-latest
+        if: github.ref == 'refs/heads/main'
+
+        steps:
+            - name: Debug info
+              run: |
+                echo "GitHub ref: ${{ github.ref }}"
+                echo "Event name: ${{ github.event_name }}"
+                echo "Default branch: ${{ github.event.repository.default_branch }}"
+
+            - name: Download artifact
+              uses: actions/download-artifact@v4
+              with:
+                  name: production-files-node-18-${{ github.run_id }}
+                  path: ./dist
+
+            - name: Deploy to GitHub Pages
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                branch: gh-pages
+                folder: dist
+                clean: true,
+                force: true,
+                token: ${{ secrets.GITHUB_TOKEN }}
