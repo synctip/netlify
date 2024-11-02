@@ -13,10 +13,15 @@ const EmployeesList: React.FC<EmployeeListProps> = ({
   total,
   onDelete,
 }) => {
-  const hours = employees.reduce((curr, prev) => (curr += prev.hours), 0);
+  const hours = employees.reduce((curr, prev) => {
+    const result = (curr += prev.hours + prev.minutes / 60);
+    return result;
+  }, 0);
+
   const perhour = total / hours || 0;
 
   const salary = (hours: number): string => {
+    console.log("salary => ", hours, perhour, hours * perhour);
     return currency(hours * perhour);
   };
   const currency = (value: number = 0): string => {
@@ -46,14 +51,17 @@ const EmployeesList: React.FC<EmployeeListProps> = ({
         height: "100%",
       }}
     >
-      {employees.map((employee, index) => (
-        <EmployeesListItem
-          key={index}
-          onDelete={handleDelete}
-          {...employee}
-          salary={salary(employee.hours)}
-        />
-      ))}
+      {employees.map((employee, index) => {
+        return (
+          <EmployeesListItem
+            key={index}
+            onDelete={handleDelete}
+            {...employee}
+            salary={salary(employee.hours + employee.minutes / 60)}
+          />
+        );
+      })}
+
       {employees.length === 0 && (
         <li
           style={{

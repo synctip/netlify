@@ -9,8 +9,15 @@ import PaymentsIcon from "@/icons/payments-icon.svg";
 import DateInput from "./Date.input";
 
 const initialInput: TipsInput = {
-  total: 0,
-  employees: [],
+  total: 3567,
+  employees: [
+    { name: "יואל", hours: 9, minutes: 0 },
+    { name: "איגור", hours: 7, minutes: 45 },
+    { name: "נעומי", hours: 6, minutes: 0 },
+    { name: "יותם", hours: 6, minutes: 0 },
+    { name: "דרורי", hours: 7, minutes: 15 },
+    { name: "יבגניה", hours: 7, minutes: 45 },
+  ],
 };
 
 const TipsForm: React.FC = () => {
