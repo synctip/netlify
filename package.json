@@ -10,8 +10,7 @@
     "dev": "vite --host",
     "build": "tsc  && vite build",
     "test": "jest",
-    "prepublish": "npm run build",
-    "publish": "npx gh-pages -d dist --verbose"
+    "publish": "gh-pages -d dist --verbose"
   },
   "keywords": [
     "bar",
