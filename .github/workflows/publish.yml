@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
             persist-credentials: false
 
@@ -32,12 +32,15 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build the project
         run: npm run build
+        env: 
+            BASE_URL: /tipsync/
 
       - name: Add .nojekyll file
         run: |
@@ -47,8 +50,9 @@ jobs:
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
         with:
-          name: production-files
+          name: production-files-${{ github.run_id }} 
           path: ./dist
+          retention-days: 1
 
   deploy:
         name: Deploy
@@ -60,7 +64,7 @@ jobs:
             - name: Download artifact
               uses: actions/download-artifact@v4
               with:
-                  name: production-files
+                  name: production-files-${{ github.run_id }}
                   path: ./dist
 
             - name: Deploy to GitHub Pages
