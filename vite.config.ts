@@ -10,6 +10,11 @@ export default defineConfig({
         titleProp: true,
         include: 'src/**/*.svg'
     }), react()],
+    base: './',
+    build: {
+        outDir: 'dist',
+        sourcemap: true
+    },
     resolve: {
         alias: {
             '@': '/src'
