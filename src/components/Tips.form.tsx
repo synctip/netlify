@@ -7,10 +7,12 @@ import ShiftSummary from "@/components/ShiftSummary";
 import EmployeesList from "./Employees.list";
 import PaymentsIcon from "@/icons/payments-icon.svg";
 import DateInput from "./Date.input";
+import ShareDetailsImage from "@/features/ShareDetailsImage";
 
 const initialInput: TipsInput = {
   total: 0,
   employees: [],
+  date: new Date().getTime(),
 };
 
 const TipsForm: React.FC = () => {
@@ -75,6 +77,7 @@ const TipsForm: React.FC = () => {
 
   return (
     <React.Fragment>
+      <ShareDetailsImage {...input} />
       <header
         style={{
           position: "relative",
