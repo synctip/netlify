@@ -79,6 +79,6 @@ jobs:
               with:
                 branch: gh-pages
                 folder: dist
-                clean: true,
-                force: true,
+                clean: true
+                force: true
                 token: ${{ secrets.GITHUB_TOKEN }}
