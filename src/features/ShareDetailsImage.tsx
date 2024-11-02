@@ -32,6 +32,7 @@ const ShareDetailsImage: React.FC<ShareDetailsProps> = (props) => {
   const handleShare = () => {
     const dataURL = `
 *TipSync* _1.0_
+https://bit.ly/tipsync
 Ilia Kamilov © 2024
 -------------------------------
 
