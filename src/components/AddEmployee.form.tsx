@@ -29,8 +29,8 @@ const AddEmployeeComponent: AddEmployeeComponent = ({
   React.useEffect(() => {
     setExist(
       Boolean(
-        debouncedName === input.name && employees.indexOf(debouncedName) !== -1,
-      ),
+        debouncedName === input.name && employees.indexOf(debouncedName) !== -1
+      )
     );
   });
 
