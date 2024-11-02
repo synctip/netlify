@@ -4,7 +4,7 @@
   "description": "Welcome to the TipSync App! This web application is designed to streamline the shift management process and tip distribution for our team at Dudu Bar & Wine. Built with React, TypeScript, and Vite, this app enhances efficiency and ensures fair practices in employee compensation.",
   "main": "index.tsx",
   "type": "module",
-  "homepage": "https://IliaKamilov.github.io/tipsync",
+  "homepage": "https://dudubarwine.github.io/tipsync",
   "scripts": {
     "preview": "vite preview",
     "dev": "vite --host",
