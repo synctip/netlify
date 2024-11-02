@@ -57,7 +57,7 @@ ${props.employees
       `- ${employee.name} - *${toDecimal(
         employee.hours,
         employee.minutes
-      )}* ש' --> ${NIS(salary(employee.hours, employee.minutes))}`
+      )}* ש' --> ${NIS(toDecimal(employee.hours, employee.minutes))}`
   )
   .join("\n\n")}
     `;
