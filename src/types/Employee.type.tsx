@@ -1,6 +1,5 @@
-
 export type Employee = {
-    name: string;
-    hours: number;
-    minutes: number;
+  name: string;
+  hours: number;
+  minutes: number;
 };

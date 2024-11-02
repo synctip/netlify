@@ -8,11 +8,11 @@ permissions:
 on:
   push:
     branches:
-      - main  # Change to your default branch if different
+      - main # Change to your default branch if different
       - dev
   pull_request:
     branches:
-      - main  # Change to your default branch if different
+      - main # Change to your default branch if different
       - dev
 
 jobs:
@@ -21,27 +21,27 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18, 20, 22]  # Specify the Node.js versions you want to test
+        node-version: [18, 20, 22] # Specify the Node.js versions you want to test
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-            persist-credentials: false
+          persist-credentials: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build the project
         run: npm run build
-        env: 
-            BASE_URL: /${{ github.event.repository.name }}/
+        env:
+          BASE_URL: /${{ github.event.repository.name }}/
 
       - name: Add .nojekyll file
         run: |
@@ -56,43 +56,42 @@ jobs:
           retention-days: 1
 
   deploy:
-        name: Deploy
-        needs: build
-        runs-on: ubuntu-latest
-        if: github.ref == 'refs/heads/main'
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
 
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v4
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-            - name: Setup Git
-              run: |
-                git config --global user.name "GitHub Actions Bot"
-                git config --global user.email "actions@github.com"
-                git config --global --add safe.directory "$GITHUB_WORKSPACE"
-              
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
-            - name: Debug info
-              run: |
-                echo "GitHub ref: ${{ github.ref }}"
-                echo "Event name: ${{ github.event_name }}"
-                echo "Default branch: ${{ github.event.repository.default_branch }}"
+      - name: Debug info
+        run: |
+          echo "GitHub ref: ${{ github.ref }}"
+          echo "Event name: ${{ github.event_name }}"
+          echo "Default branch: ${{ github.event.repository.default_branch }}"
 
-            - name: Download artifact
-              uses: actions/download-artifact@v4
-              with:
-                  name: production-files-node-18-${{ github.run_id }}
-                  path: ./dist
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: production-files-node-18-${{ github.run_id }}
+          path: ./dist
 
-            - name: Deploy to GitHub Pages
-              uses: JamesIves/github-pages-deploy-action@v4
-              with:
-                repository-name: ${{ github.repository }}
-                branch: gh-pages
-                folder: dist
-                clean: true
-                single-commit: true
-                git-config-name: GitHub Actions
-                git-config-email: actions@github.com
-                commit-message: "Deploy to GitHub Pages"
-                token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          repository-name: ${{ github.repository }}
+          branch: gh-pages
+          folder: dist
+          clean: true
+          single-commit: true
+          git-config-name: GitHub Actions
+          git-config-email: actions@github.com
+          commit-message: "Deploy to GitHub Pages"
+          token: ${{ secrets.GITHUB_TOKEN }}

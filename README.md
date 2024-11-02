@@ -34,41 +34,50 @@ To get started with the TipSync, follow these steps:
    ```bash
    git clone https://github.com/dudubarwine/tipsync.git
    ```
-   
 2. Navigate to the project directory:
    ```bash
    cd tipsync
    ```
-   
 3. Install the dependencies:
    ```bash
    npm install
- 
+   ```
+
 ## Usage
- 
+
 To run the application locally, use the following command:
-  ```bash
-  npm run dev
-  ```
+
+```bash
+npm run dev
+```
+
 Open your browser and navigate to http://localhost:3000 to access the app.
 
 ## Contributing
+
 We welcome contributions to enhance the functionality and usability of the app. Please follow these steps to contribute:
 
 1. Fork the repository.
 2. Create a new branch:
-  ```bash
-  git checkout -b @feature/<YourFeature>
-  ```
+
+```bash
+git checkout -b @feature/<YourFeature>
+```
+
 3. Commit your changes:
-  ```bash
-  git commit -m "<Add your message here>"
-  ```
+
+```bash
+git commit -m "<Add your message here>"
+```
+
 4. Push the branch:
-  ```bash
-  git push origin @feature/<YourFeature>
-  ```
+
+```bash
+git push origin @feature/<YourFeature>
+```
+
 5. Submit a pull request.
 
-## License 
+## License
+
 This project is licensed under the MIT License. See the LICENSE file for more details.
