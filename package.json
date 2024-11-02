@@ -12,7 +12,7 @@
     "test": "jest",
     "publish": "npx gh-pages -d dist",
     "format": "npx prettier --write .",
-    "lint:fix": "npx eslint . --fix"
+    "lint:fix": "npx eslint ./src --fix"
   },
   "keywords": [
     "bar",

@@ -21,7 +21,6 @@ const EmployeesList: React.FC<EmployeeListProps> = ({
   const perhour = total / hours || 0;
 
   const salary = (hours: number): string => {
-    console.log("salary => ", hours, perhour, hours * perhour);
     return currency(hours * perhour);
   };
   const currency = (value: number = 0): string => {
