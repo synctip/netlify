@@ -7,8 +7,9 @@
   "scripts": {
     "preview": "vite preview",
     "dev": "vite --host",
-    "build": "tsc && vite build",
-    "test": "jest"
+    "build": "vite build",
+    "test": "jest",
+    "publish": "npm version patch && npm run build"
   },
   "keywords": [
     "bar",
@@ -34,6 +35,8 @@
     "@svgr/rollup": "^8.1.0",
     "@testing-library/jest-dom": "^6.6.2",
     "@testing-library/react": "^16.0.1",
+    "@types/jest": "^29.5.14",
+    "@types/mocha": "^10.0.9",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@vitejs/plugin-react": "^4.2.0",
