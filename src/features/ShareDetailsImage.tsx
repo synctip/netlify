@@ -72,6 +72,8 @@ ${props.employees
         style={{
           display: "flex",
           background: "none",
+          alignItems: "center",
+          justifyContent: "center",
           border: 0,
           fontSize: 40,
           position: "fixed",
@@ -79,6 +81,8 @@ ${props.employees
           left: 0,
           transform: "rotate(180deg)",
           padding: 8,
+          zIndex: 9999,
+          cursor: "pointer",
         }}
       >
         <svg
