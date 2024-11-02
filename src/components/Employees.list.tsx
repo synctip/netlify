@@ -1,6 +1,6 @@
 import React from "react";
 import { Employee } from "@/types/Employee.type";
-import EmployeesListItem from "./Employees.list.item";
+import EmployeesListItem from "./EmployeesItem.list";
 
 type EmployeeListProps = {
   employees: Employee[];
