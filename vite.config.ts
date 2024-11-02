@@ -10,7 +10,7 @@ export default defineConfig({
         titleProp: true,
         include: 'src/**/*.svg'
     }), react()],
-    base: './',
+    base: process.env.BASE_URL || '/',
     build: {
         outDir: 'dist',
         sourcemap: true
