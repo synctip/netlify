@@ -7,10 +7,11 @@ import ShiftSummary from "@/components/ShiftSummary";
 import EmployeesList from "./Employees.list";
 import PaymentsIcon from "@/icons/payments-icon.svg";
 import DateInput from "./Date.input";
-import ShareDetailsImage from "@/features/ShareDetailsImage";
+import ShareDetailsImage from "@/components/features/ShareDetailsImage";
+import getAppVersion from "@/utils/getVersion";
 
 const initialInput: TipsInput = {
-  total: 0,
+  total: 3461,
   employees: [],
   date: new Date().getTime(),
 };
@@ -19,6 +20,8 @@ const TipsForm: React.FC = () => {
   const totalInputRef = React.useRef<HTMLInputElement | null>(null);
   const [input, setInput] = React.useState<TipsInput>(initialInput);
   const [, setError] = React.useState<string>();
+
+  getAppVersion();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -82,62 +85,6 @@ const TipsForm: React.FC = () => {
   return (
     <React.Fragment>
       <ShareDetailsImage {...input} />
-      <header
-        style={{
-          position: "relative",
-          display: "flex",
-          height: 60,
-        }}
-      >
-        <p
-          style={{
-            color: "#999",
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            textAlign: "center",
-            height: 22,
-            fontSize: 10,
-          }}
-        >
-          <a
-            href="https://github.com/IliaKamilov"
-            style={{
-              color: colors.text.primary.light,
-              textDecoration: "none",
-              fontSize: 12,
-            }}
-          >
-            Ilia Kamilov
-          </a>{" "}
-          © {new Date().getFullYear()}
-        </p>
-        <h1
-          style={{
-            color: colors.primary.main,
-            fontSize: 24,
-            display: "flex",
-            flexDirection: "row-reverse",
-            alignItems: "flex-start",
-            gap: 5,
-            position: "relative",
-            margin: "24px 0 0",
-            padding: 0,
-          }}
-        >
-          TipSync
-          <span
-            style={{
-              fontSize: 10,
-              color: colors.text.primary.light,
-              marginTop: 5,
-            }}
-          >
-            1.0
-          </span>
-        </h1>
-      </header>
       <div
         style={{
           display: "flex",
