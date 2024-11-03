@@ -22,9 +22,10 @@ const ShareDetailsImage: React.FC<ShareDetailsProps> = (props) => {
     return h + m / 60;
   };
 
-  const salary = (h: number, m: number = 0): number => {
+  const salary = (h: number, m: number = 0): string => {
     const hours = toDecimal(h, m);
-    return hours * perhour;
+    const tip = hours * perhour;
+    return NIS(tip);
   };
 
   const date = new Date(props.date);
@@ -45,20 +46,18 @@ ${date.toLocaleDateString("he-IL", {
 })}
 
 *טיפים*: ${NIS(props.total)}
-*אנשי צוות*: ${props.employees.length}
-*שעות*: ${hours.toFixed()} 
+*שעות*: ${hours.toLocaleString("he-IL", { maximumFractionDigits: 2 })} 
 *לשעה*: ${NIS(perhour || 0)}
 
 
-*אנשי צוות* \r
+*אנשי צוות* (${props.employees.length})\n
 ${props.employees
-  .map(
-    (employee) =>
-      `- ${employee.name} - *${toDecimal(
-        employee.hours,
-        employee.minutes
-      )}* ש' --> ${NIS(toDecimal(employee.hours, employee.minutes))}`
-  )
+  .map((employee) => {
+    return `- ${employee.name} - *${toDecimal(
+      employee.hours,
+      employee.minutes
+    ).toFixed(2)}* ש' --> ${salary(employee.hours, employee.minutes)}`;
+  })
   .join("\n\n")}
     `;
 

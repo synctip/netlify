@@ -3,6 +3,7 @@ const NIS = (value: number = 0): string => {
     style: "currency",
     currency: "ILS",
     maximumFractionDigits: 0,
+    minimumFractionDigits: 0,
   }).format(value);
 };
 
