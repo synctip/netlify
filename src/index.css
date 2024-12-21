@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans+Hebrew:wght@100;200;300;400;500;600;700&family=Noto+Sans+Hebrew:wght@100..900&display=swap');
+
 html,
 body,
 #app {
@@ -6,16 +8,27 @@ body,
   width: 100%;
   height: 100%;
   overflow: "hidden";
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 #app * {
-  font-family: "Courier New", Courier, monospace;
-  font-size: clamp(100%);
+  font-family: "Courier Prime", "Courier New", monospace;
+  box-sizing: border-box;
+}
+
+#app {
+  background: #efefef;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
   display: flex;
   flex-direction: column;
+  transition: background ease 100ms;
+  gap: 10px;
 }
 
 /* For Chrome, Safari, Edge */
@@ -41,35 +54,240 @@ input[type="number"] {
   color: #999999;
 }
 
-/* Global scrollbar styles for Webkit browsers (Chrome, Safari) */
-::-webkit-scrollbar {
-  width: thin;
-  /* Vertical scrollbar width */
-  height: thin;
-  /* Horizontal scrollbar height */
+input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 12px;
+  height: 16px;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
-::-webkit-scrollbar-thumb {
-  background: red;
-  /* Scrollbar thumb color */
-  border-radius: 10px;
-  /* Rounded corners */
+header {
+  justify-content: center;
+  text-align: center;
+  padding: 16px 0;
+}
+header h1 {
+  width: 100%;
+  color: #0089c0;
+  font-weight: normal;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  line-height: 1;
+}
+header h2 {
+  color: #777777;
+  font-size: .8rem;
+  font-weight: normal;
+  letter-spacing: -.5px;
+  word-spacing: -3px;
+  margin: 0;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: red;
-  /* Thumb color on hover */
+main {
+  margin-top: 20px;
+  display: flex;
+  flex-grow: 1;
+  padding: 0 10px;
+  gap: 48px;
 }
 
-::-webkit-scrollbar-track {
-  background: red;
-  /* Scrollbar track color */
+main section {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+  min-height: 75px;
+  box-sizing: border-box;
 }
 
-/* Global scrollbar styles for Firefox */
-html {
-  scrollbar-width: thin;
-  /* Options: auto, thin */
-  scrollbar-color: #ffcc00 #000;
-  /* thumb color, track color */
+section.column {
+  flex-direction: column;
+  height: 100%;
+  gap: 10px;
+}
+
+main section article {
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid #dadada;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  background: #fff;
+  min-width: 160px;
+  padding: 8px 16px;
+  margin: 0 5px;
+  width: 100%;
+}
+
+main section article:first-child {
+  margin-right: 0;
+}
+
+main section.column article {
+  margin: 0;
+  min-height: 45px;
+}
+
+main section.column article.date-picker {
+  direction: ltr;
+  margin-top: 0;
+}
+
+main section.column div h3 {
+  direction: rtl;
+  width: 100%;
+  font-size: 1rem;
+}
+
+main section.column div h3 {
+  margin: 0
+}
+
+article div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: stretch;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+article h3 {
+  display: flex;
+  margin: 0;
+  font-weight: normal;
+  position: relative;
+  box-sizing: border-box;
+}
+article h4 {
+  margin: 0;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: normal;
+  font-size: 1.1rem;
+  letter-spacing: -1.5px;
+  box-sizing: border-box;
+}
+
+article div span {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  font-size: 1.2rem;
+}
+
+article div span.text {
+  font-size: 1rem;
+  width: 100%;
+}
+
+article div input {
+  height: 100%;
+  width: 100%;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border-color: transparent;
+  outline: none;
+}
+
+.main-input-container {
+  width: auto;
+  border: 1px solid #efefef;
+  border-radius: 1rem;
+}
+
+.add-employee-form input {
+  width: 90px;
+  height: 45px;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.add-employee-form input[type="datetime-local"] {
+  width: 100px;
+  direction: ltr;
+  text-align: left;
+}
+
+@media (prefers-color-scheme: dark) {
+  #app {
+    background-color: #232323;
+  }
+  input {
+    background: #444444;
+    border-color: #888888;
+    color: #f7f7f7;
+  }
+
+  label.input-label {
+    color: #fff;
+  }
+
+  header h1 {
+    color: #00b4cc;
+  }
+  header h2 {
+    color: #b0b0b0;
+  }
+
+  main section article {
+    background: #333;
+    color: #fefefe;
+    border-color:#b0b0b023;
+  }
+
+  main section article svg {
+    color: red;
+  }
+
+  main section div h3 {
+    color: #bbb
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    color-scheme: dark;
+  }
+}
+
+@media (max-width: 768px) {
+  header { 
+    padding: 16px 0;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  header h2 {
+    font-size: .8rem;
+    margin: 0;
+  }
+
+  main section article {
+    font-size: .8rem;
+    min-width: 160px;
+  }
+
+  main section article h4 {
+    font-size: 1.2rem;
+    /* font-weight: bold; */
+  }
 }

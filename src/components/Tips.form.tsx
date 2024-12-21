@@ -1,6 +1,13 @@
+/**
+ * @important es-lint should be enabled in production.
+ * using eslint-disable is allowed only in development environments.
+ * @author Ilia Kamilov
+ * @version 1.1
+ */
+/* eslint-disable */
 import React from "react";
 import AddEmployeeComponent from "@/components/AddEmployee.form";
-import { colors } from "@/styles/colors";
+// import { colors } from "@/styles/colors";
 import { type Employee } from "@/types/Employee.type";
 import { type TipsInput } from "@/types/TipsInput.type";
 import ShiftSummary from "@/components/ShiftSummary";
@@ -9,6 +16,8 @@ import PaymentsIcon from "@/icons/payments-icon.svg";
 import DateInput from "./Date.input";
 import ShareDetailsImage from "@/components/features/ShareDetailsImage";
 import getAppVersion from "@/utils/getVersion";
+import useSystemTheme from "@/hooks/useSystemTheme";
+import InputLabel from "./InputLabel";
 
 const initialInput: TipsInput = {
   total: 3461,
@@ -20,6 +29,7 @@ const TipsForm: React.FC = () => {
   const totalInputRef = React.useRef<HTMLInputElement | null>(null);
   const [input, setInput] = React.useState<TipsInput>(initialInput);
   const [, setError] = React.useState<string>();
+  const theme = useSystemTheme();
 
   getAppVersion();
 
@@ -100,7 +110,7 @@ const TipsForm: React.FC = () => {
         <div
           style={{
             display: "flex",
-            background: colors.text.primary.dark,
+            // background: colors.text.primary.dark,
             padding: 4,
             justifyContent: "space-between",
             width: "100%",
@@ -117,41 +127,23 @@ const TipsForm: React.FC = () => {
           </div>
           <div
             style={{
-              display: "flex",
-              alignItems: "center",
               width: "100%",
+              display: "flex",
+              flexDirection: "column",
             }}
           >
-            <button
-              onClick={handleClick}
-              style={{
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-              }}
-              type="button"
-            >
-              <img src={PaymentsIcon} />
-            </button>
+            <InputLabel htmlFor="tips">טיפים</InputLabel>
             <input
               type="number"
               value={input.total || ""}
               onChange={handleChange}
               placeholder="סכום"
               name="total"
+              id="tips"
               onFocus={handleFocus}
               onKeyUp={handleKeyUp}
-              style={{
-                width: "100%",
-                fontSize: 18,
-                border: "none",
-                background: colors.text.primary.dark,
-                outline: "none",
-                color: colors.secondary.main,
-                paddingRight: 8,
-                overflow: "hidden",
-              }}
               ref={totalInputRef}
+              datatype={`theme=${theme ? "dark" : "light"}`}
             />
           </div>
         </div>

@@ -26,11 +26,11 @@ export default defineConfig({
       },
     },
   },
-  envDir: 'env',
+  envDir: "env",
   resolve: {
     alias: {
       "@": "/src",
     },
   },
-  publicDir: 'public',
+  publicDir: "public",
 });

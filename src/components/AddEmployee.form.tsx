@@ -84,7 +84,6 @@ const AddEmployeeComponent: React.FC<AddEmployeeComponent> = ({
           display: "flex",
           gap: 10,
           justifyItems: "stretch",
-          background: colors.text.primary.dark,
         }}
       >
         <div
@@ -115,9 +114,7 @@ const AddEmployeeComponent: React.FC<AddEmployeeComponent> = ({
               width: "100%",
               fontSize: 18,
               border: "none",
-              background: colors.text.primary.dark,
               outline: "none",
-              color: exist ? colors.error.primary.main : colors.secondary.main,
               paddingRight: 8,
             }}
             onChange={handleChange}
@@ -168,9 +165,7 @@ const AddEmployeeComponent: React.FC<AddEmployeeComponent> = ({
                 width: 20,
                 fontSize: 18,
                 border: "none",
-                background: colors.text.primary.dark,
                 outline: "none",
-                color: colors.secondary.main,
               }}
               onFocus={handleFocus}
               ref={hoursInputRef}
@@ -199,9 +194,7 @@ const AddEmployeeComponent: React.FC<AddEmployeeComponent> = ({
                 width: 20,
                 fontSize: 18,
                 border: "none",
-                background: colors.text.primary.dark,
                 outline: "none",
-                color: colors.secondary.main,
               }}
               onFocus={handleFocus}
               ref={hoursInputRef}
@@ -226,7 +219,6 @@ const AddEmployeeComponent: React.FC<AddEmployeeComponent> = ({
               display: "flex",
               alignItems: "center",
               fontSize: 18,
-              // boxShadow: 'inset 0 0 5px #28a745', // Inner shadow
             }}
             className="successButton"
           >
@@ -248,7 +240,6 @@ const AddEmployeeComponent: React.FC<AddEmployeeComponent> = ({
       {exist && (
         <div
           style={{
-            color: colors.error.primary.main,
             fontSize: 16,
             fontWeight: "bold",
             display: "flex",

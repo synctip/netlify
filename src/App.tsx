@@ -7,100 +7,106 @@
  * @version 1.0.0
  */
 import React from "react";
-import TipsForm from "./components/Tips.form";
-import { colors } from "./styles/colors";
-import getAppVersion from "./utils/getVersion";
 import LoadingScreen from "./components/LoadingScreen";
+import formatDate from "./utils/nowDateString";
+import AddEmployeeForm from "./components/features/v2/AddEmployeeForm";
 
 type Application = React.FC;
 
 const App: Application = () => {
   const [loading, setLoading] = React.useState<boolean>(false);
-  const [version, setVersion] = React.useState<string>("");
+  const now = new Date();
+  const [date, setDate] = React.useState<string>(formatDate(now));
 
   React.useEffect(() => {
-    if (!loading && !version) {
+    if (!loading) {
       const getVersion = async () => {
         setLoading(true);
-        const result = await getAppVersion();
-        setVersion(result);
         setLoading(false);
       };
 
       getVersion();
     }
-  }, [loading, version]);
+  }, [loading]);
 
-  if (loading || !version) return <LoadingScreen />;
+  if (loading) return <LoadingScreen />;
+
+  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setDate(formatDate(e.currentTarget.value));
+  };
 
   return (
-    <main
-      style={{
-        display: "flex",
-        alignItems: "center",
-        height: "100%",
-        width: "100%",
-        backgroundColor: colors.text.primary.dark,
-      }}
-    >
-      <header
-        style={{
-          position: "relative",
-          display: "flex",
-          height: 60,
-        }}
-      >
-        <p
-          style={{
-            color: "#999",
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            textAlign: "center",
-            height: 22,
-            fontSize: 10,
-          }}
-        >
-          <a
-            href="https://github.com/IliaKamilov"
-            style={{
-              color: colors.text.primary.light,
-              textDecoration: "none",
-              fontSize: 12,
-            }}
-          >
-            Ilia Kamilov
-          </a>{" "}
-          © {new Date().getFullYear()}
-        </p>
-        <h1
-          style={{
-            color: colors.primary.main,
-            fontSize: 24,
-            display: "flex",
-            flexDirection: "row-reverse",
-            alignItems: "flex-start",
-            gap: 5,
-            position: "relative",
-            margin: "24px 0 0",
-            padding: 0,
-          }}
-        >
-          TipSync
-          <span
-            style={{
-              fontSize: 10,
-              color: colors.text.primary.light,
-              marginTop: 5,
-            }}
-          >
-            {version}
-          </span>
-        </h1>
+    <React.Fragment>
+      <header>
+        <img
+          src="src/assets/images/tipsync2-logo-64px.png"
+          alt="TipSync Logo"
+        />
+        {/* <h2>Ilia Kamilov © {new Date().getFullYear()}</h2> */}
       </header>
-      <TipsForm />
-    </main>
+      <main>
+        <section>
+          <article>
+            <div>
+              <h3>אנשי צוות</h3>
+            </div>
+            <div>
+              <h4>7</h4>
+              <span>👥</span>
+            </div>
+          </article>
+          <article>
+            <div>
+              <h3>סה"כ שעות</h3>
+            </div>
+            <div>
+              <h4>12:35</h4>
+              <span>🕗</span>
+            </div>
+          </article>
+          <article>
+            <div>
+              <h3>שכר שעתי</h3>
+            </div>
+            <div>
+              <h4>65.44</h4>
+              <span>💵</span>
+            </div>
+          </article>
+        </section>
+        <section className="column">
+          <div>
+            <h3>בחירת תאריך</h3>
+          </div>
+          <article className="date-picker">
+            <div>
+              <input value={date} type="date" onChange={handleDateChange} />
+              <span className="text">
+                {new Date(date).toLocaleDateString("he-IL", {
+                  weekday: "long",
+                })}
+              </span>
+            </div>
+          </article>
+          <div>
+            <h3>סך טיפים</h3>
+          </div>
+          <article className="date-picker">
+            <div>
+              <input type="number" placeholder="0" />
+            </div>
+          </article>
+          <div>
+            <h3>הוסף איש צוות</h3>
+          </div>
+          <AddEmployeeForm />
+        </section>
+        <a href="https://wa.me/1234567890?text=Check%20out%20this%20image%20%20%3Cimage%3E%20https%3A%2F%2Fexample.com%2Fimage.jpg">
+          send
+        </a>
+        {/* <TipsForm /> */}
+      </main>
+    </React.Fragment>
   );
 };
 

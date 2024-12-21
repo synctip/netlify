@@ -1,4 +1,8 @@
 export const colors = {
+  background: {
+    light: "#f7f7f7",
+    dark: "#232323",
+  },
   primary: {
     main: "#0089c0",
     dark: "#006a97",
@@ -11,9 +15,9 @@ export const colors = {
   },
   text: {
     primary: {
-      main: "#ffffff",
-      light: "#e0f7fa",
-      dark: "#000000",
+      main: "#333",
+      light: "#999",
+      dark: "#fff",
     },
     secondary: {
       main: "#000000",

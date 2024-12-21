@@ -1,6 +1,17 @@
+/**
+ * @important es-lint should be enabled in production.
+ * using eslint-disable is allowed only in development environments.
+ * @author Ilia Kamilov
+ * @version 1.1
+ */
+/* eslint-disable */
 import { colors } from "@/styles/colors";
 import React from "react";
 import CalendarIcon from "./CalendarIcon";
+import nowDateString from "@/utils/nowDateString";
+import formatDate from "@/utils/nowDateString";
+import "../styles/date-picker.css";
+import InputLabel from "./InputLabel";
 
 type DateInputProps = {
   date?: number;
@@ -10,11 +21,16 @@ type DateInputProps = {
 const DateInput: React.FC<DateInputProps> = (props) => {
   const inputRef = React.useRef<HTMLInputElement | null>(null);
   const [timestamp, setTimestamp] = React.useState(
-    props.date || new Date().getTime()
+    new Date(props.date!).getTime() || new Date().getTime()
   );
 
-  const date = new Date(timestamp);
+  const date = formatDate(timestamp);
 
+  React.useEffect(() => {
+    if (inputRef.current && inputRef.current.value !== date) {
+      inputRef.current.value = date;
+    }
+  });
   const handleClick = () => {
     if (inputRef.current) inputRef.current.showPicker();
   };
@@ -28,18 +44,23 @@ const DateInput: React.FC<DateInputProps> = (props) => {
   };
 
   return (
-    <React.Fragment>
+    <div
+      style={{
+        height: 20,
+      }}
+    >
+      <InputLabel htmlFor="date-picker">תאריך</InputLabel>
       <input
         type="date"
-        value={timestamp}
+        id="date-picker"
+        value={date}
         ref={inputRef}
-        style={{
-          visibility: "hidden",
-          position: "absolute",
-        }}
         onChange={handleChange}
       />
-      <button
+      {/**
+       * Uncomment this
+       */}
+      {/* <button
         style={{
           color: colors.secondary.main,
           background: "transparent",
@@ -70,8 +91,8 @@ const DateInput: React.FC<DateInputProps> = (props) => {
             weekday: "long",
           })
           .replace("יום ", "")}
-      </h4>
-    </React.Fragment>
+      </h4> */}
+    </div>
   );
 };
 
