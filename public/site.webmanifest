@@ -3,7 +3,7 @@
   "short_name": "SyncTip",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "/synctip-logo-white-bg-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
