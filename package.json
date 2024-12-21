@@ -27,6 +27,7 @@
   "author": "Ilia Kamilov <iliakmlv@gmail.com> (https://github.com/IliaKamilov",
   "license": "MIT",
   "dependencies": {
+    "@mui/material": "^6.2.1",
     "i18next": "^23.16.4",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
