@@ -10,7 +10,7 @@ import React from "react";
 import LoadingScreen from "./components/LoadingScreen";
 import formatDate from "./utils/nowDateString";
 import AddEmployeeForm from "./components/features/v2/AddEmployeeForm";
-import logo from "@/assets/images/tipsync2-logo-64px.png";
+import logo from "@/assets/images/tipsync-icon-512.svg";
 
 type Application = React.FC;
 
@@ -39,7 +39,7 @@ const App: Application = () => {
   return (
     <React.Fragment>
       <header>
-        <img src={logo} alt="SyncTip Logo" />
+        <img src={logo} alt="SyncTip Logo" width={64} height={64} />
       </header>
       <main>
         <section>
