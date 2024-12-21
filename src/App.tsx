@@ -40,9 +40,8 @@ const App: Application = () => {
       <header>
         <img
           src="src/assets/images/tipsync2-logo-64px.png"
-          alt="TipSync Logo"
+          alt="SyncTip Logo"
         />
-        {/* <h2>Ilia Kamilov © {new Date().getFullYear()}</h2> */}
       </header>
       <main>
         <section>
