@@ -7,8 +7,24 @@
  * @version 1.0.0
  */
 
-const InfoWidget: React.FC = () => {
-  return <div>Info</div>;
+import React from "react";
+import "./Info.widget.css";
+
+type InfoWidgetProps = {
+  title: string;
+  value: string | number;
+  icon: React.ReactNode;
+};
+const InfoWidget: React.FC<InfoWidgetProps> = ({ icon, title, value }) => {
+  return (
+    <article className="info-widget">
+      <h2 className="title">{title}</h2>
+      <div className="row">
+        <h3>{value}</h3>
+        <p>{icon}</p>
+      </div>
+    </article>
+  );
 };
 
 export default InfoWidget;

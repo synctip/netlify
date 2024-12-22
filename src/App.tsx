@@ -10,6 +10,7 @@
 import React from "react";
 import "./App.css";
 import logo from "@/assets/images/synctip-logo-2048.svg";
+import InfoWidget from "./features/Info.widget";
 type Application = React.FC;
 
 const App: Application = () => {
@@ -19,7 +20,8 @@ const App: Application = () => {
         <img src={logo} alt="SyncTip Logo" />
       </header>
       <main>
-        <p>הצטרפו אלינו ברשתות החברתיות כדי לקבל את כל העדכונים הראשונים!</p>
+        <InfoWidget title="אנשי צוות" value={7} icon="👥" />
+        <InfoWidget title="סך שעות" value="12:34" icon="👥" />
       </main>
       <footer>
         <a href="https://facebook.com/synctip2">

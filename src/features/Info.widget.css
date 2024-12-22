@@ -1,0 +1,31 @@
+.info-widget {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    padding: 12px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #fefefe;
+    color: #232323;
+}
+
+.info-widget h2, h3, p {
+    font-size: large;
+    margin: 0;
+}
+
+.info-widget .title {
+    width: 100%;
+    display: flex;
+    letter-spacing: -.5px;
+    font-weight: normal;
+
+}
+
+.info-widget .row {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
