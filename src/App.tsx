@@ -11,6 +11,7 @@ import React from "react";
 import "./App.css";
 import logo from "@/assets/images/synctip-logo-2048.svg";
 import InfoWidget from "./features/Info.widget";
+import WidgetsCarousel from "./features/WidgetsCarousel";
 type Application = React.FC;
 
 const App: Application = () => {
@@ -20,8 +21,10 @@ const App: Application = () => {
         <img src={logo} alt="SyncTip Logo" />
       </header>
       <main>
-        <InfoWidget title="אנשי צוות" value={7} icon="👥" />
-        <InfoWidget title="סך שעות" value="12:34" icon="👥" />
+        <WidgetsCarousel>
+          <InfoWidget title="אנשי צוות" value={7} icon="👥" />
+          <InfoWidget title="סך שעות" value="12:34" icon="👥" />
+        </WidgetsCarousel>
       </main>
       <footer>
         <a href="https://facebook.com/synctip2">

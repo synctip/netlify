@@ -23,6 +23,8 @@ main {
     color: #9e6a56;
     padding: 0 24px;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 footer {
