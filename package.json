@@ -4,7 +4,7 @@
   "description": "Track hours, calculate salaries, and simplify payroll management accurately and effortlessly.",
   "main": "index.js",
   "type": "module",
-  "homepage": "https://synctip.com",
+  "homepage": "https://dudubarwine.github.io/tipsync",
   "scripts": {
     "preview": "vite preview",
     "dev": "vite --host",
