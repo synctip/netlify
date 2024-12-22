@@ -43,6 +43,9 @@ const AddEmployeeForm: React.FC = () => {
         value={input.start || ""}
         name="start"
         onChange={handleChange}
+        style={{
+          width: "100%",
+        }}
       />
       <input
         type="datetime-local"
@@ -50,6 +53,9 @@ const AddEmployeeForm: React.FC = () => {
         value={input.finish || ""}
         name="finish"
         onChange={handleChange}
+        style={{
+          width: "100%",
+        }}
       />
     </form>
   );
