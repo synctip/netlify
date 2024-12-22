@@ -23,7 +23,8 @@ const App: Application = () => {
       <main>
         <WidgetsCarousel>
           <InfoWidget title="אנשי צוות" value={7} icon="👥" />
-          <InfoWidget title="סך שעות" value="12:34" icon="👥" />
+          <InfoWidget title="סך שעות" value="12:34" icon="🕗" />
+          <InfoWidget title={'סה"כ לשעה'} value="56.32" icon="💵" />
         </WidgetsCarousel>
       </main>
       <footer>

@@ -1,0 +1,11 @@
+section.widgets-carousel {
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+    position: relative;
+    gap: 20px;
+}
+
+section.widgets-carousel article {
+    min-width: 200px;
+}
