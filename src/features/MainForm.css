@@ -1,0 +1,46 @@
+form.main-form {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    flex-direction: column;
+}
+
+form.main-form .form-field {
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-field .field-row {
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+}
+
+.field-row .row-item {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+
+.row-item h3 {
+    width: 100%;
+    text-align: right;
+    margin-bottom: 10px;
+    color: #323232;
+}
+
+.row-item .main-input {
+    width: 100%;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bold;
+    min-height: 45px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    outline-color: transparent;
+}
+
+.main-input[type="number"], .main-input[type="date"], .main-input[type="datetime-local"] {
+    direction: ltr;
+}
