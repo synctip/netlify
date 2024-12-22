@@ -28,6 +28,7 @@
   "license": "MIT",
   "dependencies": {
     "i18next": "^23.16.4",
+    "netlify-cli": "^17.38.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-i18next": "^15.1.0",

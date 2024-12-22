@@ -135,3 +135,5 @@ dist
 
 # data folders with sensitive information
 data
+# Local Netlify folder
+.netlify
