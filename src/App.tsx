@@ -12,6 +12,7 @@ import "./App.css";
 import logo from "@/assets/images/synctip-logo-2048.svg";
 import InfoWidget from "./features/Info.widget";
 import WidgetsCarousel from "./features/WidgetsCarousel";
+import MainInput from "./features/MainInput";
 type Application = React.FC;
 
 const App: Application = () => {
@@ -26,6 +27,7 @@ const App: Application = () => {
           <InfoWidget title="סך שעות" value="12:34" icon="🕗" />
           <InfoWidget title={'סה"כ לשעה'} value="56.32" icon="💵" />
         </WidgetsCarousel>
+        <MainInput placeholder="user" />
       </main>
       <footer>
         <a href="https://facebook.com/synctip2">
