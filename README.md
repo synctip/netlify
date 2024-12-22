@@ -1,6 +1,6 @@
-# TipSync
+# SyncTip
 
-Welcome to the TipSync App! This web application is designed to streamline the shift management process and tip distribution for our team at Dudu Bar & Wine. Built with React, TypeScript, and Vite, this app enhances efficiency and ensures fair practices in employee compensation.
+Track hours, calculate salaries, and simplify payroll management accurately and effortlessly.
 
 ## Table of Contents
 
@@ -28,15 +28,15 @@ This project utilizes the following technologies:
 
 ## Installation
 
-To get started with the TipSync, follow these steps:
+To get started with the SyncTip, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/dudubarwine/tipsync.git
+   git clone https://github.com/synctip.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd tipsync
+   cd synctip
    ```
 3. Install the dependencies:
    ```bash
@@ -61,7 +61,7 @@ We welcome contributions to enhance the functionality and usability of the app. 
 2. Create a new branch:
 
 ```bash
-git checkout -b @feature/<YourFeature>
+git checkout -b features/<YourFeature>
 ```
 
 3. Commit your changes:
@@ -73,7 +73,7 @@ git commit -m "<Add your message here>"
 4. Push the branch:
 
 ```bash
-git push origin @feature/<YourFeature>
+git push origin features/<YourFeature>
 ```
 
 5. Submit a pull request.
