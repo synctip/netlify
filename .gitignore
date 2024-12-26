@@ -137,3 +137,6 @@ dist
 data
 # Local Netlify folder
 .netlify
+
+src/App.tsx
+src/App.css
