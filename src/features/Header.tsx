@@ -4,7 +4,7 @@ import "@/style/Header.css";
 const Header: React.FC = () => {
   return (
     <header className="main">
-      <h1>SyncTip</h1>
+      <h1>Synctip</h1>
       <button>
         <img src="src/assets/icons/search.png" alt="Search" />
       </button>
