@@ -1,61 +1,75 @@
 section.hero {
     display: flex;
-    align-items: center;
-    padding: 36px 0;
-    gap: 16px;
-    align-self: center;
-    justify-self: center;
-}
-
-section.hero div {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     justify-content: center;
-    margin: 8px;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 3.5rem;
+    padding-block: 2rem;
 }
 
-section.hero div h2 {
-    font-family: "Open-Sans", sans-serif;
-    font-size: 14px;
-    margin: 8px 16px;
+section.hero h1,
+section.hero h2,
+section.hero h3,
+section.hero h4,
+section.hero h5,
+section.hero h6 {
+    /* Add your styles here */
+    color: #2C2C2C;
+    text-align: center;
+    letter-spacing: .12em;
+    user-select: none;
+    text-overflow: ellipsis;
 }
+
+section.hero .cta {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-inline: 1rem;
+}
+
 
 section.hero button {
-    width: 62px;
-    height: 62px;
-    overflow: hidden;
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-radius: 100%;
-    box-sizing: border-box;
+    background-color: #f1356d;
+    color: white;
+    border: none;
+    border-radius: 4rem;
+    padding: 1rem;
+    max-height: 4rem;
+    max-width: 4rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-section.hero div:first-child button {
-    background-color: #0bb97c;
-} 
-
-section.hero div:last-child button {
-    background-color: #eaeaec;
-    color: #2b2b41
-}
-
-section.hero div:nth-child(2) button {
-    background-color: #f4c7b9;
+section.hero button:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 section.hero button img {
-    position: relative;
-    width: 32px;
-    height: 32px;
-    filter: drop-shadow(0px 100px 0 #fff);
-        transform: translateY(-100px);
+    width: 2rem;
+    height: 2rem;
+    box-sizing: border-box;
 }
 
-section.hero div:last-child button img {
-    filter: drop-shadow(0px 100px 0 #2b2b41);
+.cta:first-child button {
+    background-color: #f41f57;
+}
+.cta:first-child button:hover {
+    background-color: #D61E44;
 }
 
-section.hero div:nth-child(2) button img {
-    filter: drop-shadow(0px 100px 0 #d28068);
+.cta:nth-child(2) button {
+    background-color: #38edf6;
+}.cta:nth-child(2) button:hover {
+    background-color: #1ABBB6;
+}
+
+.cta:last-child button {
+    background-color: #fff;
+}
+.cta:last-child button:hover {
+    background-color: #E0E0E0;
 }

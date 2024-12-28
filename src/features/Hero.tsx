@@ -1,25 +1,29 @@
 import React from "react";
 import "@/style/Hero.css";
+import CreateIcon from "@/assets/icons/SVG/plus.svg";
+import PeopleIcon from "@/assets/icons/SVG/people.svg";
+import MoreIcon from "@/assets/icons/SVG/more.svg";
+
 const Hero: React.FC = () => {
   return (
     <section className="hero">
-      <div>
+      <div className="cta">
         <button>
-          <img src="src/assets/icons/plus.png" alt="New" />
+          <img src={CreateIcon} />
         </button>
-        <h2>חדש</h2>
+        <h4>חדש</h4>
       </div>
-      <div>
+      <div className="cta">
         <button>
-          <img src="src/assets/icons/group.png" alt="Groups" />
+          <img src={PeopleIcon} />
         </button>
-        <h2>קבוצות</h2>
+        <h4>קבוצות</h4>
       </div>
-      <div>
+      <div className="cta">
         <button>
-          <img src="src/assets/icons/more-vert.png" alt="More" />
+          <img src={MoreIcon} />
         </button>
-        <h2>עוד</h2>
+        <h4>עוד</h4>
       </div>
     </section>
   );
