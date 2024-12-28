@@ -12,8 +12,42 @@
 }
 
 #app {
-    position: relative;
-    font-family: "Open Sans", sans-serif;
-    background-color: #fefefe;
-    box-sizing: border-box;
+    font-family: "Open-Sans", sans-serif;
+    font-size: 1rem!important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    height: 100%;
+    background-color: #e2e7eb;
+}
+
+header, main, footer {
+    display: flex;
+}
+
+header img {
+    max-width: 200px;
+    margin: 50px auto 30px auto;
+    display: block;
+}
+
+main {
+    color: #9e6a56;
+    padding: 0 24px;
+    text-align: center;
+}
+
+footer {
+    gap: 15px;
+}
+
+footer a {
+    font-size: 2rem;
+    padding: 12px 24px;
+    color: #7b8c98;
+}
+
+footer a:hover {
+    color: #9e6a56;
 }
