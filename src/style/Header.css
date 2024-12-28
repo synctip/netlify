@@ -1,0 +1,44 @@
+header.main {
+    justify-content: space-between;
+    direction: ltr;
+    font-family: "Open-Sans-Light", sans-serif;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-inline: 1rem;
+    box-sizing: border-box;
+    color: "#3D3D4E";
+    max-height: 3rem;
+    margin-block: 1rem;
+}
+
+header.main h1  {
+    font-size: 2rem;
+    font-weight: normal;
+    color: inherit;
+    text-decoration: none;
+    margin: 0;
+
+}
+header.main h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+header.main button {
+    border: none;
+    background-color: transparent;
+    padding-inline: .625rem;
+    margin-block: auto;
+}
+
+header.main button svg {
+    height:2rem;
+    box-sizing: border-box;
+    margin: auto;
+    margin-block: 5px;
+    max-width: none;
+    display: block;
+    fill: #3D3D4E;
+}

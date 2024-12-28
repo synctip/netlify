@@ -1,12 +1,25 @@
+@font-face {
+    font-family: "Open-Sans";
+    src: url("./assets/fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+    font-family: "Open-Sans-Bold";
+    src: url("./assets/fonts/OpenSans-Bold.ttf");
+}
+@font-face {
+    font-family: "Open-Sans-Light";
+    src: url("./assets/fonts/OpenSans-Light.ttf");
+}
+
 #app {
-    font-family: "Courier New", Courier, monospace;
-    font-size: 1rem;
+    font-family: "Open-Sans", sans-serif;
+    font-size: 1rem!important;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: stretch;
     height: 100%;
-    background-color: #e2e7eb;
+    background-color: #f5f6f8;
 }
 
 header, main, footer {

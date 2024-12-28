@@ -18,7 +18,9 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/style": ["./src/style/*"],
+      "@/*": ["./src/*"],
+      "@Icons/": ["./src/Icons/*"]
     }
   },
   "include": ["src/**/*", "src/__tests__/**/*", "src/vite-env.d.ts"]

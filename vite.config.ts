@@ -9,7 +9,7 @@ export default defineConfig({
       ref: true,
       svgo: false,
       titleProp: true,
-      include: "src/**/*.svg",
+      include: "src/assets/icons/SVG/*.svg",
     }),
     react(),
   ],
@@ -29,6 +29,8 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": "/src",
+      "@/Icons": "/src/assets/icons/",
+      "@/Style": "/src/style",
     },
   },
 });

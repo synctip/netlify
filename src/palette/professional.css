@@ -1,0 +1,55 @@
+/**
+ * @file src\palette\professional.css
+ * @description Description of the file
+ * @author Ilia Kamilov <iliakmlv@gmail.com> (https://github.com/iliakamilov)
+ * @date 28/12/2024
+ * @license MIT
+ * @version 1.0.0
+ * @copyright (c) 2024, Synctip.com (https://github.com/synctip)
+ * All rights reserved.
+ * 
+ * 
+ * Professional color palette.
+ */
+
+:root {
+--primary-color: #8AC186;
+  /* Mint Green */
+  --secondary-color: #4A90E2;
+  /* Smoky Blue */
+  --background-color: #F9F9F9;
+  /* Neutral White */
+  --text-color: #333333;
+  /* Dark Gray */
+  --accent-color: #FFD700;
+  /* Gold */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Open Sans', sans-serif;
+}
+
+button.primary {
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.secondary {
+  background-color: var(--secondary-color);
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.highlight {
+  color: var(--accent-color);
+  font-weight: bold;
+}

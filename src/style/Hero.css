@@ -1,0 +1,75 @@
+section.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 3.5rem;
+    padding-block: 2rem;
+}
+
+section.hero h1,
+section.hero h2,
+section.hero h3,
+section.hero h4,
+section.hero h5,
+section.hero h6 {
+    /* Add your styles here */
+    color: #2C2C2C;
+    text-align: center;
+    letter-spacing: .12em;
+    user-select: none;
+    text-overflow: ellipsis;
+}
+
+section.hero .cta {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-inline: 1rem;
+}
+
+
+section.hero button {
+    background-color: #f1356d;
+    color: white;
+    border: none;
+    border-radius: 4rem;
+    padding: 1rem;
+    max-height: 4rem;
+    max-width: 4rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+section.hero button:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+section.hero button svg {
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+}
+
+.cta:first-child button {
+    background-color: #f41f57;
+}
+.cta:first-child button:hover {
+    background-color: #D61E44;
+}
+
+.cta:nth-child(2) button {
+    background-color: #38edf6;
+}.cta:nth-child(2) button:hover {
+    background-color: #1ABBB6;
+}
+
+.cta:last-child button {
+    background-color: #fff;
+}
+.cta:last-child button:hover {
+    background-color: #E0E0E0;
+}
