@@ -9,12 +9,14 @@
 
 import React from "react";
 import "./App.css";
-import Header from "./features/Header";
+import Header from "./feature/Header";
+import Hero from "./feature/Hero";
 
 const App = () => {
   return (
     <>
       <Header />
+      <Hero />
     </>
   );
 };
