@@ -1,0 +1,25 @@
+/**
+ * @file src\style\HistoryList.css
+ * @description History List component styles
+ * @author Ilia Kamilov <iliakmlv@gmail.com> (https://github.com/iliakamilov)
+ * @date 28/12/2024
+ * @license MIT
+ * @version 0.0.0
+ */
+
+ .historyList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+ }
+
+ .historyList li {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid var(--text-color);
+ }
