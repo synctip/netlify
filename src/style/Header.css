@@ -24,5 +24,8 @@ header.main button {
 header.main button img {
     height:2rem;
     box-sizing: border-box;
-    margin-top: 6px;
+    margin: auto;
+    margin-block: 5px;
+    max-width: none;
+    display: block;
 }
