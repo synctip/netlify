@@ -5,7 +5,9 @@ import SearchIcon from "@/Icons/Search";
 const Header: React.FC = () => {
   return (
     <header className="main">
-      <h1>Synctip</h1>
+      <h1>
+        <a href="/">Synctip</a>
+      </h1>
       <button>
         <SearchIcon />
       </button>

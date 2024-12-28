@@ -6,26 +6,35 @@ header.main {
     display: flex;
     padding-inline: 1rem;
     box-sizing: border-box;
-    color: "#262626";
+    color: "#3D3D4E";
 }
 
-header.main h1 {
+header.main h1  {
     font-size: 2rem;
     font-weight: normal;
+    color: inherit;
+    text-decoration: none;
+
+}
+header.main h1 a {
+    color: inherit;
+    text-decoration: none;
 }
 
 
 header.main button {
     border: none;
     background-color: transparent;
+    padding-inline: .625rem;
     margin-block: auto;
 }
 
-header.main button img {
+header.main button svg {
     height:2rem;
     box-sizing: border-box;
     margin: auto;
     margin-block: 5px;
     max-width: none;
     display: block;
+    fill: #3D3D4E;
 }
