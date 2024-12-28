@@ -1,36 +1,28 @@
 header.main {
-    display: flex;
     justify-content: space-between;
     direction: ltr;
-    align-items: center;
-    padding: 4px 8px;
-    color: #333;
-    min-height: 56px;
+    font-family: "Open-Sans-Light", sans-serif;
+    width: 100%;
+    display: flex;
+    padding-inline: 1rem;
+    box-sizing: border-box;
+    color: "#262626";
 }
 
 header.main h1 {
-    font-family: "Open-Sans-Light", sans-serif;
-    font-size: 24px;
-    margin: 0;
-    padding: 8px;
-    user-select: none;
+    font-size: 2rem;
+    font-weight: normal;
 }
 
+
 header.main button {
-    box-sizing: border-box;
-    border: 0;
+    border: none;
     background-color: transparent;
-    color: #333;
-    cursor: pointer;
-    padding: 8px;
+    margin-block: auto;
 }
 
 header.main button img {
-    width: 24px;
-    height: 24px;
-    position: relative;
-}
-
-header.main button:hover img {
-    transform: scale(1.2);
+    height:2rem;
+    box-sizing: border-box;
+    margin-top: 6px;
 }
