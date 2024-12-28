@@ -5,27 +5,20 @@
  * @date 28/12/2024
  * @license MIT
  * @version 0.0.1 (file version)
- * @app-version 2.0.0-prelaunch
  * @tag v2
  */
 
 import React from "react";
-import { ReactComponent as PeopleSolid } from "@/assets/icons/SVG/solidPeople.svg";
+import { ReactComponent as SearchSolid } from "@/assets/icons/SVG/solidSearch.svg";
+import { IconVariantProp, INITIAL_VARIANT_PROP } from ".";
 
-const VARIANT = ["solid"] as const;
-type Variant = (typeof VARIANT)[number];
-
-type PeopleIconProps = {
-  variant?: Variant;
-};
-
-const People: React.FC<PeopleIconProps> = (
-  { variant } = { variant: VARIANT[0] }
-) => {
+const Search: React.FC<IconVariantProp> = ({
+  variant,
+} = INITIAL_VARIANT_PROP) => {
   switch (variant) {
     default:
-      return <PeopleSolid />;
+      return <SearchSolid width={24} height={24} />;
   }
 };
 
-export default People;
+export default Search;

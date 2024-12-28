@@ -5,7 +5,8 @@
  * @date 28/12/2024
  * @license MIT
  * @version 0.0.1 (file version)
- * @app-version 2.0.0-prelaunch
+ * @app_version 2.0.0
+ * @tag v2
  */
 
 import React from "react";
