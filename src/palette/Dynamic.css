@@ -1,0 +1,55 @@
+/**
+ * @file src\palette\professional.css
+ * @description Theme #2: Dynamic
+ * @author Ilia Kamilov <iliakmlv@gmail.com> (https://github.com/iliakamilov)
+ * @date 28/12/2024
+ * @license MIT
+ * @version 1.0.0
+ * @copyright (c) 2024, Synctip.com (https://github.com/synctip)
+ * All rights reserved.
+ * 
+ * 
+ * Dynamic color palette.
+ */
+
+:root {
+--primary-color: #1ABC9C;
+  /* Mint Green */
+  --secondary-color: #FF6F61;
+  /* Smoky Blue */
+  --background-color: #2C3E50;
+  /* Neutral White */
+  --text-color: #ECF0F1;
+  /* Dark Gray */
+  --accent-color: #F9E79F;
+  /* Gold */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Open Sans', sans-serif;
+}
+
+button.primary {
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.secondary {
+  background-color: var(--secondary-color);
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.highlight {
+  color: var(--accent-color);
+  font-weight: bold;
+}
