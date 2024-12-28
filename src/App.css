@@ -19,7 +19,8 @@
     align-items: center;
     justify-content: stretch;
     height: 100%;
-    background-color: #f5f6f8;
+    position: relative;
+    background-color: var(--background-color);
 }
 
 header, main, footer {

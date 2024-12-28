@@ -55,21 +55,19 @@ section.hero button svg {
 }
 
 .cta:first-child button {
-    background-color: #f41f57;
-}
-.cta:first-child button:hover {
-    background-color: #D61E44;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    fill: var(--background-color)
 }
 
 .cta:nth-child(2) button {
-    background-color: #38edf6;
-}.cta:nth-child(2) button:hover {
-    background-color: #1ABBB6;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    fill: var(--background-color)
 }
 
 .cta:last-child button {
-    background-color: #fff;
-}
-.cta:last-child button:hover {
-    background-color: #E0E0E0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    fill: var(--text-color)
 }
