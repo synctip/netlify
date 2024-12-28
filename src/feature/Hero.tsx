@@ -1,7 +1,7 @@
 import React from "react";
 import "@/style/Hero.css";
-import { ReactComponent as MoreIcon } from "@Icons/SVG/solidMore.svg";
-import { ReactComponent as PlusIcon } from "@Icons/SVG/solidPlus.svg";
+import MoreIcon from "@/Icons/More";
+import PlusIcon from "@/Icons/Plus";
 import People from "@/Icons/People";
 
 const Hero: React.FC = () => {

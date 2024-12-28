@@ -29,7 +29,8 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": "/src",
-      "@Icons": "/src/assets/icons",
+      "@/Icons": "/src/assets/icons/",
+      "@/Style": "/src/style",
     },
   },
 });
