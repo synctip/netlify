@@ -1,6 +1,6 @@
 import React from "react";
 import "@/style/Header.css";
-import SearchIcon from "@/assets/icons/SVG/search.svg";
+import SearchIcon from "@Icons/SVG/solidSearch.svg";
 
 const Header: React.FC = () => {
   return (

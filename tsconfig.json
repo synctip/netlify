@@ -18,6 +18,7 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
+      "@/Icons": ["./src/assets/icons/*"],
       "@/*": ["./src/*"]
     }
   },

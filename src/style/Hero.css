@@ -48,9 +48,9 @@ section.hero button:hover {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-section.hero button img {
-    width: 2rem;
-    height: 2rem;
+section.hero button svg {
+    width: 32px;
+    height: 32px;
     box-sizing: border-box;
 }
 
